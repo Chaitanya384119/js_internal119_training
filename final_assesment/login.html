@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCL Student Login Portal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f3f7;
+        }
+
+        header {
+            background: #0033a0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            margin-top: 6px;
+            font-size: 14px;
+        }
+
+        .main {
+            display: flex;
+            gap: 30px;
+            padding: 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* Left Content */
+        .content {
+            flex: 1;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+        }
+
+        .content h2 {
+            margin-top: 0;
+            color: #0033a0;
+        }
+
+        .content ul {
+            padding-left: 18px;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
+        /* Login Box */
+        .login-box {
+            flex: 1;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0033a0;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 12px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 10px;
+            font-size: 16px;
+            background: #0033a0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #001f66;
+        }
+
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: red;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .register-link a {
+            color: #0033a0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .main {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>HCL Student Login Portal</h1>
+    <p>Learning & Career Development Platform</p>
+</header>
+
+<div class="main">
+
+    <!-- LEFT INFORMATION CONTENT -->
+    <div class="content">
+        <h2>Welcome to HCL Student Portal</h2>
+        <p>
+            The HCL Student Portal is designed to provide registered students
+            access to training programs, certifications, learning resources,
+            and placement-related information.
+        </p>
+
+        <h3>Portal Features</h3>
+        <ul>
+            <li>Access to enrolled courses</li>
+            <li>Training schedules and materials</li>
+            <li>Certification updates</li>
+            <li>Career and placement support</li>
+        </ul>
+
+        <h3>Who Can Login?</h3>
+        <ul>
+            <li>Registered students</li>
+            <li>HCL training program participants</li>
+            <li>Internship candidates</li>
+        </ul>
+    </div>
+
+    <!-- RIGHT LOGIN FORM -->
+    <div class="login-box">
+        <h2>Student Login</h2>
+
+        <form id="loginForm" novalidate>
+            <label>Student ID / Email</label>
+            <input type="text" id="loginId">
+
+            <label>Password</label>
+            <input type="password" id="password">
+
+            <button type="submit">Login</button>
+
+            <div id="loginMsg" class="message"></div>
+        </form>
+
+        <div class="register-link">
+            New Student?
+            <a href="validation1.html">Register Here</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 HCL Technologies | Student Learning Portal (Demo Project)
+</footer>
+
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const loginId = document.getElementById("loginId").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const msg = document.getElementById("loginMsg");
+
+        msg.innerText = "";
+
+        if (loginId === "" || password === "") {
+            msg.innerText = "Please enter both Login ID and Password.";
+            return;
+        }
+
+        // Demo-only message (no backend)
+        msg.style.color = "green";
+        msg.innerText = "Login successful";
+    });
+</script>
+
+</body>
+</html>

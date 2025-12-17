@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Result</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        .container {
+            width: 420px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: green;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Registration Successful!</h2>
+
+    <p><strong>Name:</strong> <span id="name"></span></p>
+    <p><strong>Email:</strong> <span id="email"></span></p>
+    <p><strong>Gender:</strong> <span id="gender"></span></p>
+    <p><strong>Course:</strong> <span id="course"></span></p>
+</div>
+
+<script>
+    document.getElementById("name").innerText = localStorage.getItem("name");
+    document.getElementById("email").innerText = localStorage.getItem("email");
+    document.getElementById("gender").innerText = localStorage.getItem("gender");
+    document.getElementById("course").innerText = localStorage.getItem("course");
+</script>
+
+</body>
+</html>
