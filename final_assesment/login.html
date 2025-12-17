@@ -219,12 +219,16 @@
 
         msg.innerText = "";
 
-        if (loginId === "" || password === "") {
-            msg.innerText = "Please enter both Login ID and Password.";
+        if (loginId === "" ) {
+            msg.innerText = "Please enter Login ID.";
+            return;
+        }
+        if (password === "") {
+            msg.innerText = "Please enter Password.";
             return;
         }
 
-        // Demo-only message (no backend)
+        
         msg.style.color = "green";
         msg.innerText = "Login successful";
     });
